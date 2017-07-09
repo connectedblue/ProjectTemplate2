@@ -38,11 +38,11 @@
 
 # Config file locations
 
-## ProjectTemplate2standard file location of the config file
+## ProjectTemplate standard file location of the config file
 .project.config <- file.path('config', 'global.dcf')
 
 ## File that specifies default config values to be used in load.project() if config items are missing
-## from a particular ProjectTemplate2directory (because e.g. it was created under a previous version of PT and
+## from a particular ProjectTemplate directory (because e.g. it was created under a previous version of PT and
 ## migrate.project() hasnt been run yet)
 .default.config.file <- system.file('defaults/config/default.dcf', package = 'ProjectTemplate2')
 
@@ -58,19 +58,19 @@
 
 # load and validate the config and return a config object
 
-.load.config <- function(override.config = NULL) {
+.load.config <- function(override.config = NULL, compare.config=.default.config) {
         config <- if (file.exists(.project.config)) {
                  translate.dcf(.project.config)
         } else {
                 warning('You are missing a configuration file: ', .project.config, ' . Defaults will be used.')
-                .default.config
+                compare.config
         }
 
         missing.entries <- setdiff(names(.default.config), names(config))
         if (length(missing.entries) > 0) {
                 warning('Your configuration file is missing the following entries: ',
                         paste(missing.entries, collapse = ', '), '. Defaults will be used.')
-                config[missing.entries] <- .default.config[missing.entries]
+                config[missing.entries] <- compare.config[missing.entries]
         }
 
         if (length(override.config) > 0) {

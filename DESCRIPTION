@@ -39,7 +39,7 @@ Suggests:
     whisker,
     testthat (>= 0.8)
 BugReports: https://github.com/connectedblue/ProjectTemplate2/issues
-Collate:
+Collate: 
     'add.config.R'
     'xport.reader.R'
     'xlsx.reader.R'
@@ -76,6 +76,7 @@ Collate:
     'translate.dcf.R'
     'config.R'
     'create.project.R'
+    'customtemplate.R'
     'get.project.R'
     'help.R'
     'load.project.R'
@@ -86,7 +87,6 @@ Collate:
     'show.project.R'
     'stopifnotproject.R'
     'stub.tests.R'
-    'test.project.R'
-    'customtemplate.R'
     'templates.R'
+    'test.project.R'
 RoxygenNote: 6.0.1

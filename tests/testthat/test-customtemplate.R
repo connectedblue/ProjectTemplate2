@@ -7,16 +7,16 @@ tidy_up <- function () {
         Sys.setenv("PT_ROOT_TEMPLATE_DIR"="NULL")
 }
 
-root_template_dir <- system.file('example_data/example_templates', package = 'ProjectTemplate')
-github_root_template_dir <- system.file('example_data/example_templates/github_config', package = 'ProjectTemplate')
+root_template_dir <- system.file('example_data/example_templates', package = 'ProjectTemplate2')
+github_root_template_dir <- system.file('example_data/example_templates/github_config', package = 'ProjectTemplate2')
 
-template1_dir <- system.file('inst/example_data/example_templates/template1', package = 'ProjectTemplate')
-template2_dir <- system.file('inst/example_data/example_templates/template2', package = 'ProjectTemplate')
+template1_dir <- system.file('inst/example_data/example_templates/template1', package = 'ProjectTemplate2')
+template2_dir <- system.file('inst/example_data/example_templates/template2', package = 'ProjectTemplate2')
 
 template1_dir <- gsub("^[^/]*(.*)$", "local::\\1", template1_dir)
 template2_dir <- gsub("^[^/]*(.*)$", "local::\\1", template2_dir)
 
-template_dcf <- system.file('example_data/example_templates/ProjectTemplateRootConfig.dcf', package = 'ProjectTemplate')
+template_dcf <- system.file('example_data/example_templates/ProjectTemplateRootConfig.dcf', package = 'ProjectTemplate2')
 
 test_that('adding new templates works correctly ', {
   
