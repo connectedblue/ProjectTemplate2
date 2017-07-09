@@ -4,7 +4,7 @@ tidy_up <- function () {
         objs <- setdiff(ls(envir = .TargetEnv), "tidy_up")
         rm(list = objs, envir = .TargetEnv)
         # disable templates
-        Sys.setenv("PT_ROOT_TEMPLATE_DIR"="NULL")
+        options(PT_ROOT_TEMPLATE_DIR=NULL)
 }
 
 root_template_dir <- system.file('example_data/example_templates', package = 'ProjectTemplate2')
@@ -21,8 +21,8 @@ template_dcf <- system.file('example_data/example_templates/ProjectTemplateRootC
 test_that('adding new templates works correctly ', {
   
   # Set environment variable to the root template location
-  Sys.setenv("PT_ROOT_TEMPLATE_DIR"=root_template_dir)
-  on.exit(Sys.unsetenv("PT_ROOT_TEMPLATE_DIR"))
+  options(PT_ROOT_TEMPLATE_DIR=root_template_dir)
+  on.exit(options(PT_ROOT_TEMPLATE_DIR=NULL))
   
   # Create a project based on template 1
   this_dir <- getwd()
@@ -109,8 +109,8 @@ test_that('adding templates hosted on github works correctly', {
         # can be granted
         
         # Set environment variable to the root template location
-        Sys.setenv("PT_ROOT_TEMPLATE_DIR"=github_root_template_dir)
-        on.exit(Sys.unsetenv("PT_ROOT_TEMPLATE_DIR"))
+        options(PT_ROOT_TEMPLATE_DIR=github_root_template_dir)
+        on.exit(options(PT_ROOT_TEMPLATE_DIR=NULL))
         
         # Create a project based on template 1
         this_dir <- getwd()
