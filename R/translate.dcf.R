@@ -16,7 +16,7 @@
 #' @export
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{translate.dcf(file.path('config', 'global.dcf'))}
 #' @importFrom stats setNames

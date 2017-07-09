@@ -22,7 +22,7 @@ pixamp package. This is useful for working with image files as a data
 set.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{ppm.reader('example.ppm', 'data/example.ppm', 'example')}
 }

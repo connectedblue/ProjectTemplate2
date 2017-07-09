@@ -4,19 +4,19 @@
 #' It will set up all of the relevant directories and their initial
 #' contents. For those who only want the minimal functionality, the
 #' \code{minimal} argument can be set to \code{TRUE} to create a subset of
-#' ProjectTemplate's default directories. For those who want to dump
-#' all of ProjectTemplate's functionality into a directory for extensive
+#' ProjectTemplate2s default directories. For those who want to dump
+#' all of ProjectTemplate2s functionality into a directory for extensive
 #' customization, the \code{dump} argument can be set to \code{TRUE}.
 #'
 #' @param project.name A character vector containing the name for this new
 #'   project. Must be a valid directory name for your file system.
 #' @param minimal A boolean value indicating whether to create a minimal
 #'   project or a full project. A minimal project contains only the
-#'   directories strictly necessary to use ProjectTemplate and does not
+#'   directories strictly necessary to use ProjectTemplate2and does not
 #'   provide template code for profiling, unit testing or documenting your
 #'   project.
 #' @param dump A boolean value indicating whether the entire functionality
-#'   of ProjectTemplate should be written out to flat files in the current
+#'   of ProjectTemplate2should be written out to flat files in the current
 #'   project.
 #' @param merge.strategy What should happen if the target directory exists and
 #'   is not empty?
@@ -35,7 +35,7 @@
 #' @export
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{create.project('MyProject')}
 create.project <- function(project.name = 'new-project', minimal = FALSE,
@@ -65,7 +65,7 @@ create.project <- function(project.name = 'new-project', minimal = FALSE,
 
   if (dump)
   {
-    1; # Magic happens here to place all of the R files from ProjectTemplate in the current folder.
+    1; # Magic happens here to place all of the R files from ProjectTemplate2in the current folder.
 
     # For time being, just copy the entire contents of defaults/* and then also copy the collated R source.
     # Seriously broken at the moment.
@@ -84,7 +84,7 @@ create.project <- function(project.name = 'new-project', minimal = FALSE,
 }
 
 .create.project.existing <- function(project.name, merge.strategy, exclude) {
-  template.path <- system.file('defaults/full', package = 'ProjectTemplate')
+  template.path <- system.file('defaults/full', package = 'ProjectTemplate2')
   template.files.all <- .list.files.and.dirs(path = template.path)
   template.files <- setdiff(template.files.all, exclude)
 

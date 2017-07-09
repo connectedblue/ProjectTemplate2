@@ -12,13 +12,13 @@
 #'
 #' @export
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #' \dontrun{
 #' clear.cache("x", "y", "z")
 #' }
 clear.cache <- function (...){
         
-        project_name <- .stopifnotproject("Change to a valid ProjectTemplate directory and run clear.cache() again.")
+        project_name <- .stopifnotproject("Change to a valid ProjectTemplate2directory and run clear.cache() again.")
         
         message(paste0("Clearing cache for project: ", project_name))
         

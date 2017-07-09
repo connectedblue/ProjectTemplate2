@@ -14,14 +14,14 @@
 #'   \code{\link{get.project}}, \code{\link{show.project}}
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #' \dontrun{load.project()
 #'
 #' cache.project()}
 cache.project <- function()
 {
   
-  project_name <- .stopifnotproject("Change to a valid ProjectTemplate directory and run cache.project() again.")
+  project_name <- .stopifnotproject("Change to a valid ProjectTemplate2directory and run cache.project() again.")
         
   # get all data related to the project
   project_data <- unique(c(get.project()[['data']], .cached.variables()))

@@ -1,25 +1,13 @@
-Package: ProjectTemplate
+Package: ProjectTemplate2
 Type: Package
-Title: Automates the Creation of New Statistical Analysis Projects
-Version: 0.7
-Date: 2016-09-04
-Authors@R: c( person("Aleksandar", "Blagotic", role = "ctb"),
-    person("Diego", "Valle-Jones", role = "ctb"),
-    person("Jeffrey", "Breen", role = "ctb"),
-    person("Joakim", "Lundborg", role = "ctb"),
-    person("John Myles", "White", role = c("aut", "cph")),
-    person("Josh", "Bode", role = "ctb"),
-    person("Kenton", "White", role = c("ctb", "cre"), email = "jkentonwhite@gmail.com"),
-    person("Kirill", "Mueller", role = "ctb"),
-    person("Matteo", "Redaelli", role = "ctb"),
-    person("Noah", "Lorang", role = "ctb"),
-    person("Patrick", "Schalk", role = "ctb"),
-    person("Dominik", "Schneider", role="ctb"))
-Description: Provides functions to
-    automatically build a directory structure for a new R
-    project. Using this structure, 'ProjectTemplate'
-    automates data loading, preprocessing, library
-    importing and unit testing.
+Title: Provides custom template and other extensions of ProjectTemplate
+Version: 0.1
+Date: 2017-07-09
+Authors@R: c(
+    person("Chris", "Shaw", role = c("aut", "ctb", "cre"), email="chris@connectedblue.com"))
+Description: A fork of 'ProjectTemplate2' by John Myles White
+    which automates data loading, preprocessing, library
+    importing and unit testing.  This version has extended functionality
 License: Artistic-2.0
 LazyLoad: yes
 Roxygen: list(wrap = FALSE)
@@ -49,8 +37,7 @@ Suggests:
     GetoptLong,
     whisker,
     testthat (>= 0.8)
-URL: http://projecttemplate.net
-BugReports: https://github.com/johnmyleswhite/ProjectTemplate/issues
+BugReports: https://github.com/connectedblue/ProjectTemplate2/issues
 Collate:
     'add.config.R'
     'xport.reader.R'

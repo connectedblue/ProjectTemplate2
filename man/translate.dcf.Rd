@@ -24,7 +24,7 @@ is placed between the back tick character , then the content is
 evaluated as R code and the result returned in a string
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{translate.dcf(file.path('config', 'global.dcf'))}
 }

@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{run.project()}
 run.project <- function()

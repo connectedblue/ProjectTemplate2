@@ -36,7 +36,7 @@ In a forthcoming version this compatibility setting will be removed,
 and no packages will be attached to the search path by internal code.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{require.package('PackageName')}
 }

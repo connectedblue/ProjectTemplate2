@@ -8,7 +8,7 @@
 #' Examples of the DCF format and settings used in a .file file are shown
 #' below:
 #'
-#' path: http://www.johnmyleswhite.com/ProjectTemplate/sample_data.csv
+#' path: http://www.johnmyleswhite.com/ProjectTemplate2sample_data.csv
 #' extension: csv
 #'
 #' @param data.file The name of the data file to be read.
@@ -18,7 +18,7 @@
 #' @return No value is returned; this function is called for its side effects.
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{file.reader('example.file', 'data/example.file', 'example')}
 file.reader <- function(data.file, filename, variable.name)

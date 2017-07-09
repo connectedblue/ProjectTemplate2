@@ -11,13 +11,13 @@
 #' @export
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{stub.tests()}
 stub.tests <- function()
 {
 
-  .stopifnotproject("Change to a valid ProjectTemplate directory and run stub.tests() again.")
+  .stopifnotproject("Change to a valid ProjectTemplate2directory and run stub.tests() again.")
   generate.arguments <- function(fun.name, tmp.env)
   {
     arguments <- names(formals(get(fun.name, envir = tmp.env, inherits = FALSE)))

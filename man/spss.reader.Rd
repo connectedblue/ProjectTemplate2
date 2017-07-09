@@ -22,7 +22,7 @@ convert the resulting list object into a data frame before inserting the
 data set into the global environment.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{spss.reader('example.sav', 'data/example.sav', 'example')}
 }

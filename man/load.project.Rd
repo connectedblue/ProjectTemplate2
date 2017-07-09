@@ -19,7 +19,7 @@ the project from which it is called.  The behaviour can be controlled by
 adjusting the \code{\link{project.config}} configuration.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{load.project()}
 }

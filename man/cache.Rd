@@ -39,7 +39,7 @@ can be run to flush individual items from the cache.
 Calling \code{cache()} with no arguments returns the current status of the cache.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 \dontrun{create.project('tmp-project')
 
 setwd('tmp-project')

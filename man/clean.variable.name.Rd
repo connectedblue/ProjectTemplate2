@@ -20,7 +20,7 @@ file name will be stripped; non-alphabetic characters inside of the file
 name will be replaced with dots.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{clean.variable.name('example_1')}
 }

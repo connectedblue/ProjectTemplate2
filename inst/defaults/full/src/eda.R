@@ -1,4 +1,4 @@
-library('ProjectTemplate')
+library('ProjectTemplate2')
 load.project()
 
 for (dataset in project.info$data)

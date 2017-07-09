@@ -11,7 +11,7 @@
 #' @return No value is returned; this function is called for its side effects.
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{csv2.reader('example.csv2', 'data/example.csv2', 'example')}
 #' @importFrom utils read.csv

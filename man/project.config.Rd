@@ -2,7 +2,7 @@
 % Please edit documentation in R/project.config.R
 \name{project.config}
 \alias{project.config}
-\title{ProjectTemplate Configuration file}
+\title{ProjectTemplate2 Configuration file}
 \usage{
 project.config()
 }
@@ -10,7 +10,7 @@ project.config()
 The current project configuration is displayed.
 }
 \description{
-Every \code{ProjectTemplate} project has a configuration file found at
+Every \code{ProjectTemplate2} project has a configuration file found at
 \code{config/global.dcf} that contains various options that can be tweaked
 to control runtime behaviour.  The valid options are shown below, and must
 be encoded using the \code{DCF} format.
@@ -74,12 +74,12 @@ during load.project() a warning will be displayed informing that has happened. \
  }
 
    If the \code{config/globals.dcf} is missing some items (for example because it was created under an
-old version of \code{ProjectTemplate}, then the following configuration is used for any missing items
+old version of \code{ProjectTemplate2}, then the following configuration is used for any missing items
 during \code{load.project()}:
-  \Sexpr[results=rd, stage=build]{ProjectTemplate:::.format.config(ProjectTemplate:::.default.config[-1], format="Rd")}
+  \Sexpr[results=rd, stage=build]{ProjectTemplate2:::.format.config(ProjectTemplate2:::.default.config[-1], format="Rd")}
 
  When a new project is created using \code{create.project()}, the following values are pre-populated:
-  \Sexpr[results=rd, stage=build]{ProjectTemplate:::.format.config(ProjectTemplate:::.new.config, format="Rd")}
+  \Sexpr[results=rd, stage=build]{ProjectTemplate2:::.format.config(ProjectTemplate2:::.new.config, format="Rd")}
 }
 \seealso{
 \code{\link{load.project}}

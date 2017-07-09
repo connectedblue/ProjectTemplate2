@@ -21,7 +21,7 @@ This function will load all of the data sets stored in the specified
 XBASE file into the global environment.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{dbf.reader('example.dbf', 'data/example.dbf', 'example')}
 }

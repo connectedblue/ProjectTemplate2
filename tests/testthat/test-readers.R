@@ -11,7 +11,7 @@ test_that('Test 1: CSV Data file', {
 
   data.file <- 'example_01.csv'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_01.csv')
   variable.name <- clean.variable.name('example_01')
 
@@ -37,7 +37,7 @@ test_that('Test 2: .csv.bz2', {
 
   data.file <- 'example_02.csv.bz2'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_02.csv.bz2')
   variable.name <- clean.variable.name('example_02')
 
@@ -64,7 +64,7 @@ test_that('Test 3: csv.zip data', {
 
   data.file <- 'example_03.csv.zip'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_03.csv.zip')
   variable.name <- clean.variable.name('example_03')
 
@@ -91,7 +91,7 @@ test_that('Example 04: CSV Data File with GZip Compression', {
 
   data.file <- 'example_04.csv.gz'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_04.csv.gz')
   variable.name <- clean.variable.name('example_04')
 
@@ -118,7 +118,7 @@ test_that('Example 05: TSV Data File', {
 
   data.file <- 'example_05.tsv'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_05.tsv')
   variable.name <- clean.variable.name('example_05')
 
@@ -145,7 +145,7 @@ test_that('Example 06: TSV Data File with BZip2 Compression', {
 
   data.file <- 'example_06.tsv.bz2'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_06.tsv.bz2')
   variable.name <- clean.variable.name('example_06')
 
@@ -172,7 +172,7 @@ test_that('Example 07: TSV Data File with Zip Compression', {
 
   data.file <- 'example_07.tsv.zip'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_07.tsv.zip')
   variable.name <- clean.variable.name('example_07')
 
@@ -199,7 +199,7 @@ test_that('Example 08: TSV Data File with GZip Compression', {
 
   data.file <- 'example_08.tsv.gz'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_08.tsv.gz')
   variable.name <- clean.variable.name('example_08')
 
@@ -225,7 +225,7 @@ test_that('Example 09: WSV Data File', {
 
   data.file <- 'example_09.wsv'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_09.wsv')
   variable.name <- clean.variable.name('example_09')
 
@@ -253,7 +253,7 @@ test_that('Example 10: WSV Data File with BZip2 Compression', {
 
   data.file <- 'example_10.wsv.bz2'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_10.wsv.bz2')
   variable.name <- clean.variable.name('example_10')
 
@@ -280,7 +280,7 @@ test_that('Example 11: WSV Data File with Zip Compression', {
 
   data.file <- 'example_11.wsv.zip'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_11.wsv.zip')
   variable.name <- clean.variable.name('example_11')
 
@@ -306,7 +306,7 @@ test_that('Example 12: WSV Data File with GZip Compression', {
 
   data.file <- 'example_12.wsv.gz'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_12.wsv.gz')
   variable.name <- clean.variable.name('example_12')
 
@@ -333,7 +333,7 @@ test_that('Example 13: RData Data File with .RData Extension', {
 
   data.file <- 'example_13.RData'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_13.RData')
   variable.name <- clean.variable.name('example_13')
 
@@ -360,7 +360,7 @@ test_that('Example 14: RData Data File with .rda Extension', {
 
   data.file <- 'example_14.rda'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_14.rda')
   variable.name <- clean.variable.name('example_14')
 
@@ -392,7 +392,7 @@ test_that('Example 16: TSV File with .tab Extension', {
 
   data.file <- 'example_16.tab'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_16.tab')
   variable.name <- clean.variable.name('example_16')
 
@@ -418,7 +418,7 @@ test_that('Example 17: TSV File with .tab Extension and BZip2 Compression', {
 
   data.file <- 'example_17.tab.bz2'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_17.tab.bz2')
   variable.name <- clean.variable.name('example_17')
 
@@ -444,7 +444,7 @@ test_that('Example 18: TSV File with .tab Extension and Zip Compression', {
 
   data.file <- 'example_18.tab.zip'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_18.tab.zip')
   variable.name <- clean.variable.name('example_18')
 
@@ -470,7 +470,7 @@ test_that('Example 19: TSV File with .tab Extension and GZip Compression', {
 
   data.file <- 'example_19.tab.gz'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_19.tab.gz')
   variable.name <- clean.variable.name('example_19')
 
@@ -497,7 +497,7 @@ test_that('Example 20: WSV File with .txt Extension', {
 
   data.file <- 'example_20.txt'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_20.txt')
   variable.name <- clean.variable.name('example_20')
 
@@ -524,7 +524,7 @@ test_that('Example 21: WSV File with .txt Extension and BZip2 Compression', {
 
   data.file <- 'example_21.txt.bz2'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_21.txt.bz2')
   variable.name <- clean.variable.name('example_21')
 
@@ -551,7 +551,7 @@ test_that('Example 22: WSV File with .txt Extension and Zip Compression', {
 
   data.file <- 'example_22.txt.zip'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_22.txt.zip')
   variable.name <- clean.variable.name('example_22')
 
@@ -578,7 +578,7 @@ test_that('Example 23: WSV File with .txt Extension and GZip Compression', {
 
   data.file <- 'example_23.txt.gz'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_23.txt.gz')
   variable.name <- clean.variable.name('example_23')
 
@@ -605,7 +605,7 @@ test_that('Example 24: R File with .R Extension', {
 
   data.file <- 'example_24.R'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_24.R')
   variable.name <- clean.variable.name('example_24')
 
@@ -632,7 +632,7 @@ test_that('Example 25: R File with .r Extension', {
 
   data.file <- 'example_25.r'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_25.r')
   variable.name <- clean.variable.name('example_25')
 
@@ -659,7 +659,7 @@ test_that('Example 26: Excel 2007 File with .xls Extension', {
 
   data.file <- 'example_26.xls'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_26.xls')
   variable.name <- clean.variable.name('example_26')
 
@@ -681,7 +681,7 @@ test_that('Example 27: Excel 2011 File with .xlsx Extension', {
 
   #data.file <- 'example_27.xlsx'
   #filename <- file.path(system.file('example_data',
-  #                                  package = 'ProjectTemplate'),
+  #                                  package = 'ProjectTemplate2'),
   #                      'example_27.xlsx')
   #variable.name <- clean.variable.name('example_27')
   #
@@ -710,7 +710,7 @@ test_that('Example 28: SQLite3 Support with .sql Extension with table = "..."', 
 
   sql.file <- data.frame(type = 'sqlite',
                          dbname = file.path(system.file('example_data',
-                                                        package = 'ProjectTemplate'),
+                                                        package = 'ProjectTemplate2'),
                                             'example_28.db'),
                          table = 'example_28')
   write.dcf(sql.file, file = 'example_28.sql', width = 1000)
@@ -743,7 +743,7 @@ test_that('Example 29: SQLite3 Support with .sql Extension with query = "SELECT 
 
   sql.file <- data.frame(type = 'sqlite',
                          dbname = file.path(system.file('example_data',
-                                                        package = 'ProjectTemplate'),
+                                                        package = 'ProjectTemplate2'),
                                             'example_29.db'),
                          query = 'SELECT * FROM example_29')
   write.dcf(sql.file, file = 'example_29.sql', width = 1000)
@@ -776,7 +776,7 @@ test_that('Example 30: SQLite3 Support with .sql Extension and table = "*"', {
 
   sql.file <- data.frame(type = 'sqlite',
                          dbname = file.path(system.file('example_data',
-                                                        package = 'ProjectTemplate'),
+                                                        package = 'ProjectTemplate2'),
                                             'example_30.db'),
                          table = '*')
   write.dcf(sql.file, file = 'example_30.sql', width = 1000)
@@ -818,7 +818,7 @@ test_that('Example 31: SQLite3 Support with .db Extension', {
 
   data.file <- 'example_31.db'
   filename <- file.path(system.file('example_data',
-                                  package = 'ProjectTemplate'),
+                                  package = 'ProjectTemplate2'),
                         'example_31.db')
   variable.name <- clean.variable.name('example_31')
 
@@ -852,7 +852,7 @@ test_that('Example 32: Weka Support with .arff Extension', {
 
   data.file <- 'example_32.arff'
   filename <- file.path(system.file('example_data',
-                                  package = 'ProjectTemplate'),
+                                  package = 'ProjectTemplate2'),
                         'example_32.arff')
   variable.name <- clean.variable.name('example_32')
 
@@ -878,7 +878,7 @@ test_that('Example 33: Arbitary File Support with .file File Pointing to .db Fil
   suppressMessages(load.project())
 
   info.file <- data.frame(path = file.path(system.file('example_data',
-                                                        package = 'ProjectTemplate'),
+                                                        package = 'ProjectTemplate2'),
                                             'example_28.db'),
                          extension = 'db')
   write.dcf(info.file, file = 'example_33.file', width = 1000)
@@ -916,7 +916,7 @@ test_that('Example 35: PPM Support with .ppm Extension', {
 
   data.file <- 'example_35.ppm'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_35.ppm')
   variable.name <- clean.variable.name('example_35')
 
@@ -942,7 +942,7 @@ test_that('Example 36: dBase Support with .dbf Extension', {
 
   data.file <- 'example_36.dbf'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_36.dbf')
   variable.name <- clean.variable.name('example_36')
 
@@ -969,7 +969,7 @@ test_that('Example 37: SPSS Support with .sav Extension', {
 
   data.file <- 'example_37.sav'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_37.sav')
   variable.name <- clean.variable.name('example_37')
 
@@ -998,7 +998,7 @@ test_that('Example 38: SPSS Support with .sav Extension / Alternative Generation
 
   data.file <- 'example_38.sav'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_38.sav')
   variable.name <- clean.variable.name('example_38')
 
@@ -1027,7 +1027,7 @@ test_that('Example 39: Stata Support with .dta Extension', {
 
   data.file <- 'example_39.dta'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_39.dta')
   variable.name <- clean.variable.name('example_39')
 
@@ -1054,7 +1054,7 @@ test_that('Example 40: Stata Support with .dta Extension / Alternative Generatio
 
   data.file <- 'example_40.dta'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_40.dta')
   variable.name <- clean.variable.name('example_40')
 
@@ -1081,7 +1081,7 @@ test_that('Example 41: SAS Support with .xport Extension', {
 
   data.file <- 'example_41.xport'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_41.xport')
   variable.name <- clean.variable.name('example_41')
 
@@ -1108,7 +1108,7 @@ test_that('Example 42: SAS Support with .xpt Extension', {
 
   data.file <- 'example_42.xpt'
   filename <- file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example_42.xpt')
   variable.name <- clean.variable.name('example_42')
 

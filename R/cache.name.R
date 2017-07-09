@@ -8,7 +8,7 @@
 #' @return A translated variable name.
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{cache.name('example.1')}
 cache.name <- function(data.filename)

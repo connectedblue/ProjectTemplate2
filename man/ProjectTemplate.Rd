@@ -3,17 +3,17 @@
 \docType{package}
 \name{ProjectTemplate}
 \alias{ProjectTemplate}
-\alias{package-ProjectTemplate}
+\alias{ProjectTemplate2package-ProjectTemplate}
 \alias{ProjectTemplate-package}
 \title{Automates the creation of new statistical analysis projects.}
 \description{
-ProjectTemplate provides functions to automatically build a directory
+ProjectTemplate2provides functions to automatically build a directory
 structure for a new R project. Using this structure, ProjectTemplate
 automates data loading, preprocessing, library importing and unit
 testing.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{create.project('project_name')
 

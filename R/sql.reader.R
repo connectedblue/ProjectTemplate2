@@ -108,7 +108,7 @@
 #' @return No value is returned; this function is called for its side effects.
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{sql.reader('example.sql', 'data/example.sql', 'example')}
 #'

@@ -9,7 +9,7 @@
 #' @return No value is returned; this function is called for its side effects.
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{systat.reader('example.sys', 'data/example.sys', 'example')}
 systat.reader <- function(data.file, filename, variable.name)

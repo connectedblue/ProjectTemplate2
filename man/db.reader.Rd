@@ -23,7 +23,7 @@ table or query to execute against the database, move it elsewhere and
 use a .sql file interpreted by \code{\link{sql.reader}}.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{db.reader('example.db', 'data/example.db', 'example')}
 }

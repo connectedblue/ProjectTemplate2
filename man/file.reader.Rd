@@ -26,11 +26,11 @@ used from the dispatch table to load the data set.
 Examples of the DCF format and settings used in a .file file are shown
 below:
 
-path: http://www.johnmyleswhite.com/ProjectTemplate/sample_data.csv
+path: http://www.johnmyleswhite.com/ProjectTemplate2sample_data.csv
 extension: csv
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{file.reader('example.file', 'data/example.file', 'example')}
 }

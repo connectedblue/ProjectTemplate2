@@ -23,7 +23,7 @@
 #' @export
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{require.package('PackageName')}
 #' @importFrom utils install.packages

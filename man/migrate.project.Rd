@@ -14,7 +14,7 @@ This function automatically performs all necessary steps to migrate an existing 
 so that it is compatible with this version of ProjectTemplate
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{migrate.project()}
 }

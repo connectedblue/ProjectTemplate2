@@ -38,16 +38,16 @@
 
 # Config file locations
 
-## ProjectTemplate standard file location of the config file
+## ProjectTemplate2standard file location of the config file
 .project.config <- file.path('config', 'global.dcf')
 
 ## File that specifies default config values to be used in load.project() if config items are missing
-## from a particular ProjectTemplate directory (because e.g. it was created under a previous version of PT and
+## from a particular ProjectTemplate2directory (because e.g. it was created under a previous version of PT and
 ## migrate.project() hasnt been run yet)
-.default.config.file <- system.file('defaults/config/default.dcf', package = 'ProjectTemplate')
+.default.config.file <- system.file('defaults/config/default.dcf', package = 'ProjectTemplate2')
 
 ## File that contains the default initial project configuration after create.project()
-.new.config.file <- system.file('defaults/full/config/global.dcf', package = 'ProjectTemplate')
+.new.config.file <- system.file('defaults/full/config/global.dcf', package = 'ProjectTemplate2')
 
 # items in the configuration file which are not TRUE/FALSE (or on/off) values
 .nonflag.config <- c("version", "libraries", "logging_level", "sticky_variables", "data_ignore")

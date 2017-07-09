@@ -1,6 +1,6 @@
-#' ProjectTemplate Configuration file
+#' ProjectTemplate2 Configuration file
 #'
-#' Every \code{ProjectTemplate} project has a configuration file found at
+#' Every \code{ProjectTemplate2} project has a configuration file found at
 #' \code{config/global.dcf} that contains various options that can be tweaked
 #' to control runtime behaviour.  The valid options are shown below, and must
 #' be encoded using the \code{DCF} format.
@@ -67,12 +67,12 @@
 #'  }
 #'
 #'    If the \code{config/globals.dcf} is missing some items (for example because it was created under an
-#' old version of \code{ProjectTemplate}, then the following configuration is used for any missing items
+#' old version of \code{ProjectTemplate2}, then the following configuration is used for any missing items
 #' during \code{load.project()}:
-#'   \Sexpr[results=rd, stage=build]{ProjectTemplate:::.format.config(ProjectTemplate:::.default.config[-1], format="Rd")}
+#'   \Sexpr[results=rd, stage=build]{ProjectTemplate2:::.format.config(ProjectTemplate2:::.default.config[-1], format="Rd")}
 #'
 #'  When a new project is created using \code{create.project()}, the following values are pre-populated:
-#'   \Sexpr[results=rd, stage=build]{ProjectTemplate:::.format.config(ProjectTemplate:::.new.config, format="Rd")}
+#'   \Sexpr[results=rd, stage=build]{ProjectTemplate2:::.format.config(ProjectTemplate2:::.new.config, format="Rd")}
 #'
 #' @export
 #'

@@ -21,7 +21,7 @@ This function will load the specified Minitab Portable Worksheet into
 memory.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{mtp.reader('example.mtp', 'data/example.mtp', 'example')}
 }

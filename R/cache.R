@@ -27,7 +27,7 @@
 #'
 #' @export
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #' \dontrun{create.project('tmp-project')
 #'
 #' setwd('tmp-project')
@@ -40,7 +40,7 @@
 cache <- function(variable=NULL, CODE=NULL, depends=NULL,  ...)
 {
   
-  project_name <- .stopifnotproject("Change to a valid ProjectTemplate directory and run cache() again.")
+  project_name <- .stopifnotproject("Change to a valid ProjectTemplate2directory and run cache() again.")
         
   if (is.null(variable)) return(.cache.status())
         

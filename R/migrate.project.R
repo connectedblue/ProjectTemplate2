@@ -12,7 +12,7 @@
 #' @include load.project.R
 #'
 #' @examples
-#' library('ProjectTemplate')
+#' library('ProjectTemplate2')
 #'
 #' \dontrun{migrate.project()}
 migrate.project <- function()
@@ -68,7 +68,7 @@ migrate.project <- function()
       "Your existing project configuration in globals.dcf does not contain up to",
       paste0("date configuration settings in this version ",
              .package.version(),
-             " of ProjectTemplate.  They will"),
+             " of ProjectTemplate2  They will"),
       "be added automatically during migration, but you should review afterward.",
       sep = "\n"))
 
@@ -114,7 +114,7 @@ migrate.project <- function()
   # Process other migration conflicts
   if (doc_not_renamed) {
     message(paste("",
-      "The doc directory has now been deprecated and ProjectTemplate now uses docs",
+      "The doc directory has now been deprecated and ProjectTemplate2now uses docs",
       "instead. This is to ease integration with GitHub Pages (See",
       "https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3).",
       "",
@@ -123,7 +123,7 @@ migrate.project <- function()
       sep = "\n"
     ))
     file.copy(system.file(file.path('defaults', 'full', 'docs'),
-                          package = 'ProjectTemplate', mustWork = TRUE),
+                          package = 'ProjectTemplate2', mustWork = TRUE),
               '.',
               recursive = TRUE,
               overwrite = FALSE)
@@ -134,7 +134,7 @@ migrate.project <- function()
       "In the near future, the csv2.reader() behaviour will change to actually using",
       "R's read.csv2() method, which assumes the decimal separator to be ',' and the",
       "field separator to be ';'. Before, the decimal operator was expected to be '.'.",
-      "(See https://github.com/johnmyleswhite/ProjectTemplate/issues/170).",
+      "(See https://github.com/johnmyleswhite/ProjectTemplate2issues/170).",
       "",
       "Please review your code and datafiles.",
       sep = "\n"

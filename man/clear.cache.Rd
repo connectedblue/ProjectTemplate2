@@ -19,7 +19,7 @@ directory. This will force that data to be read in from the \code{data} director
 next time \code{\link{load.project}} is called.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 \dontrun{
 clear.cache("x", "y", "z")
 }

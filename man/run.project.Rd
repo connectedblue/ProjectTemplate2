@@ -16,7 +16,7 @@ future versions of this function will provide a means of running
 the analyses in parallel.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{run.project()}
 }

@@ -15,10 +15,10 @@ test_that('Test 1: Add an extension', {
   on.exit(setwd(oldwd), add = TRUE)
 
   file.copy(file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'foo.reader.R'), file.path('lib', 'foo.reader.R'))
   file.copy(file.path(system.file('example_data',
-                                    package = 'ProjectTemplate'),
+                                    package = 'ProjectTemplate2'),
                         'example.foo'), file.path('data', 'example.foo'))
 
   expect_that(file.exists(file.path('lib', 'foo.reader.R')), is_true())

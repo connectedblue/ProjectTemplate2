@@ -22,7 +22,7 @@ the specified global variable binding. The default behaviour will soon
 change to actually use R's read.csv2() function, assuming dec=".", sep=";".
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{csv2.reader('example.csv2', 'data/example.csv2', 'example')}
 }

@@ -19,12 +19,12 @@ No value is returned; this function is called for its side effects.
 This function will clear the global environment and reload a project.  This is
 useful when you've updated your data sets or changed your preprocessing scripts.
 Any \code{sticky_variables} configuration parameter in \code{\link{project.config}}
-will remain both in memory and (if present) in the cache by default. If the \code{reset} 
+will remain both in memory and (if present) in the cache by default. If the \code{reset}
 parameter is \code{TRUE}, then all variables are cleared from both the global
 environment and the cache.
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{load.project()
 

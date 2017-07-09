@@ -120,7 +120,7 @@ plugin: extension
 query: SELECT *,STDEV(value1) FROM example_table
 }
 \examples{
-library('ProjectTemplate')
+library('ProjectTemplate2')
 
 \dontrun{sql.reader('example.sql', 'data/example.sql', 'example')}
 
