@@ -1,0 +1,13 @@
+^\.travis\.yml$
+^appveyor\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
+^build_script\.R$
+^README\.markdown$
+^roxygenate\.R$
+^TODO\.markdown$
+^website$
+^Makefile$
+^NEWS\.md$
+^NEWS\.md\.tmpl$
+^cran-comments\.md$
