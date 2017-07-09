@@ -5,7 +5,7 @@ Version: 0.1
 Date: 2017-07-09
 Authors@R: c(
     person("Chris", "Shaw", role = c("aut", "ctb", "cre"), email="chris@connectedblue.com"))
-Description: A fork of 'ProjectTemplate2' by John Myles White
+Description: A fork of 'ProjectTemplate' by John Myles White
     which automates data loading, preprocessing, library
     importing and unit testing.  This version has extended functionality
 License: Artistic-2.0
@@ -21,6 +21,7 @@ Suggests:
     formatR,
     stringr,
     ggplot2,
+    httr,
     lubridate,
     log4r (>= 0.1-5),
     DBI,
@@ -86,4 +87,6 @@ Collate:
     'stopifnotproject.R'
     'stub.tests.R'
     'test.project.R'
+    'customtemplate.R'
+    'templates.R'
 RoxygenNote: 6.0.1

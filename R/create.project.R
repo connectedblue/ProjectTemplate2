@@ -4,19 +4,22 @@
 #' It will set up all of the relevant directories and their initial
 #' contents. For those who only want the minimal functionality, the
 #' \code{minimal} argument can be set to \code{TRUE} to create a subset of
-#' ProjectTemplate2s default directories. For those who want to dump
-#' all of ProjectTemplate2s functionality into a directory for extensive
+#' ProjectTemplate2's default directories. For those who want to dump
+#' all of ProjectTemplate2's functionality into a directory for extensive
 #' customization, the \code{dump} argument can be set to \code{TRUE}.
 #'
 #' @param project.name A character vector containing the name for this new
 #'   project. Must be a valid directory name for your file system.
+#' @param template.name A string name or number of the custom
+#'   template that should be applied after the base project has been created.
+#'   Templates are installed using the \code{\link{templates("add", ...)}} command.
 #' @param minimal A boolean value indicating whether to create a minimal
 #'   project or a full project. A minimal project contains only the
-#'   directories strictly necessary to use ProjectTemplate2and does not
+#'   directories strictly necessary to use ProjectTemplate2 and does not
 #'   provide template code for profiling, unit testing or documenting your
 #'   project.
 #' @param dump A boolean value indicating whether the entire functionality
-#'   of ProjectTemplate2should be written out to flat files in the current
+#'   of ProjectTemplate2 should be written out to flat files in the current
 #'   project.
 #' @param merge.strategy What should happen if the target directory exists and
 #'   is not empty?
@@ -37,8 +40,12 @@
 #' @examples
 #' library('ProjectTemplate2')
 #'
-#' \dontrun{create.project('MyProject')}
-create.project <- function(project.name = 'new-project', minimal = FALSE,
+#' \dontrun{
+#'     create.project('MyProject')
+#'     create.project('MyProject', 'my.knitr.template')
+#'     }
+create.project <- function(project.name = 'new-project', template.name = .get.template(default=TRUE),
+                           minimal = FALSE,
                            dump = FALSE, merge.strategy = c("require.empty", "allow.non.conflict"))
 {
 
@@ -65,7 +72,7 @@ create.project <- function(project.name = 'new-project', minimal = FALSE,
 
   if (dump)
   {
-    1; # Magic happens here to place all of the R files from ProjectTemplate2in the current folder.
+    1; # Magic happens here to place all of the R files from ProjectTemplate2 in the current folder.
 
     # For time being, just copy the entire contents of defaults/* and then also copy the collated R source.
     # Seriously broken at the moment.
@@ -78,6 +85,17 @@ create.project <- function(project.name = 'new-project', minimal = FALSE,
       cat(deparse(get(item, envir = e, inherits = FALSE)),
           file = file.path(project.name, paste(item, '.R', sep = '')))
     }
+  }
+
+  if (!is.null(template.name)) {
+          tryCatch(
+                .apply.template(template.name, project.name),
+
+                error=function (e) {
+                        message(paste0("Unable to add template: ", template.name))
+                        message("Run templates('config') to check the configuration")
+                }
+           )
   }
 
   invisible(NULL)
