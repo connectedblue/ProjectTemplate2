@@ -83,7 +83,12 @@ templates <- function(command = "show", template.name = NULL, location = NULL)
          config ={
                  .root.template.status(full=TRUE)
                  .quietstop()
-         } 
+         },
+         default ={
+                 if (is.null(template.name))
+                         message("Please supply a template to make default")
+                 .set.root.template.default(template.name)
+         }
          
          
   )

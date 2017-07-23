@@ -76,12 +76,19 @@
 .root.template.dir <- function() {
         root_dir <- getOption("PT_ROOT_TEMPLATE_DIR")
         if(is.null(root_dir)) 
-                return(Sys.getenv("R_USER"))
+                root_dir <- Sys.getenv("R_USER")
+        if(!dir.exists(root_dir))
+                stop(paste0(root_dir, " root template directory does not exist.",
+                            " Run options(PT_ROOT_TEMPLATE_DIR=...) to set correct value"))
         return(root_dir)
 }
 
 .root.template.file <- function () {
-        file.path(.root.template.dir(), "ProjectTemplateRootConfig.dcf")
+        root.template.name=getOption("PT_ROOT_TEMPLATE_FILE")
+        if(is.null(root.template.name))
+                root.template.name="ProjectTemplateRootConfig.dcf"
+        template_file <- file.path(.root.template.dir(), root.template.name)
+        return(template_file)
 }
 
 # Types of template configuration allowed
@@ -154,11 +161,6 @@
 # get the relevant template by number, name or default (if there is one)
 .get.template <- function (template.name=NULL, default=FALSE) {
         
-        # If PT_ROOT_TEMPLATE_DIR is "NULL" then the templates functionality
-        # is disabled
-        if (Sys.getenv("PT_ROOT_TEMPLATE_DIR")=="NULL")
-                return(NULL)
-        
         # get the template definition
         definition <- .read.root.template()
         
@@ -192,7 +194,10 @@
         
 }
 
-
+.set.root.template.default <- function(template.name) {
+        t<- .get.template(template.name)
+        #t$
+}
 
 # Internal functions to manipulate the root template file
 
@@ -255,8 +260,12 @@
 
 # Check if the root template file exists
 .require.root.template <- function() {
-        if(!file.exists(.root.template.file())) 
-                stop("Custom Templates not defined")
+        root_template <- .root.template.file() 
+        if(!file.exists(root_template)) { 
+                blank <- data.frame(X="")
+                blank <- setNames(blank, .no.templates)
+                write.dcf(blank, root_template)
+        }
 }
 
 # Provide the status of templates defined in the root template
@@ -326,6 +335,7 @@
 
 # Determine whether custom templates are present
 .templates.defined <- function(definition){
+        
         if ((.no.templates %in% names(definition)) || is.null(definition) ||
             nrow(definition)==0)
                 return(FALSE)

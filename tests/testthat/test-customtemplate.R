@@ -10,29 +10,25 @@ tidy_up <- function () {
 root_template_dir <- system.file('example_data/example_templates', package = 'ProjectTemplate2')
 github_root_template_dir <- system.file('example_data/example_templates/github_config', package = 'ProjectTemplate2')
 
-template1_dir <- system.file('inst/example_data/example_templates/template1', package = 'ProjectTemplate2')
-template2_dir <- system.file('inst/example_data/example_templates/template2', package = 'ProjectTemplate2')
-
-template1_dir <- gsub("^[^/]*(.*)$", "local::\\1", template1_dir)
-template2_dir <- gsub("^[^/]*(.*)$", "local::\\1", template2_dir)
-
-template_dcf <- system.file('example_data/example_templates/ProjectTemplateRootConfig.dcf', package = 'ProjectTemplate2')
-
 test_that('adding new templates works correctly ', {
   
   # Set environment variable to the root template location
   options(PT_ROOT_TEMPLATE_DIR=root_template_dir)
+  options(PT_ROOT_TEMPLATE_FILE="ProjectTemplateRootConfig.dcf")
+  
   on.exit(options(PT_ROOT_TEMPLATE_DIR=NULL))
   
   # Create a project based on template 1
   this_dir <- getwd()
   
   test_project <- tempfile('test_project')
+  
   suppressMessages(create.project(test_project, "template1", minimal = FALSE))
-  on.exit(unlink(test_project, recursive = TRUE), add = TRUE)
-
+  
   oldwd <- setwd(test_project)
-  #on.exit(setwd(oldwd), add = TRUE)
+  on.exit(setwd(oldwd), add = TRUE)
+  on.exit(unlink(test_project, recursive = TRUE), add = TRUE)
+  
   
   # template 1 has a custom config variable called template which is set to 1
   # and a file called readme.md
@@ -110,19 +106,23 @@ test_that('adding templates hosted on github works correctly', {
         
         # Set environment variable to the root template location
         options(PT_ROOT_TEMPLATE_DIR=github_root_template_dir)
+        options(PT_ROOT_TEMPLATE_FILE="ProjectTemplateRootConfig.dcf")
+        
         on.exit(options(PT_ROOT_TEMPLATE_DIR=NULL))
         
         # Create a project based on template 1
         this_dir <- getwd()
         
         test_project <- tempfile('test_project')
+       
+        
         suppressMessages(create.project(test_project, "template1", minimal = FALSE))
-        on.exit(unlink(test_project, recursive = TRUE), add = TRUE)
         
         oldwd <- setwd(test_project)
-        #on.exit(setwd(oldwd), add = TRUE)
+        on.exit(setwd(oldwd), add = TRUE)
+        on.exit(unlink(test_project, recursive = TRUE), add = TRUE)
         
-        # template 1 has a custom config variable called template which is set to 1
+        # template 1 has a custom config variable called template which is set to 11
         # and a file called readme.md
         suppressMessages(load.project())
         expect_true(file.exists("readme.md"))
