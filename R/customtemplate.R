@@ -207,23 +207,25 @@
 # Note that the definition object is passed to validate and save routines
 .read.root.template <- function (template.file=.root.template.file()) {
         
+        # This forces a root template file to exist, even if it's empty
         .require.root.template()
            
-        # read the file from disk and perform basic validation
+        # read the file from disk 
         definition <- .read.template.definition(template.file)
         
         # if no root template defined return NULL
         if(!.templates.defined(definition))  
                 return (NULL)
         
-        # validate the root template
-        definition <- .validate.root.template(definition)
+        # expand the root file contents to parse the content_location field
+        definition <- .expand.root.template(definition)
         
         definition
 }
 
-# Check the root template definition has the right format
-.validate.root.template <- function(definition) {
+
+# Save a template definition into the root template file
+.save.root.template <- function(definition) {
         
         # return if no templates
         if(!.templates.defined(definition))  
@@ -231,40 +233,16 @@
         
         # Make sure only root items are included in the definition
         definition <- definition[definition$template_type == "root",]
-        
-        # Mandatory fields for root templates should be present
-        missing_names <- setdiff(.root.template.field.names, names(definition))
-        if (length(missing_names) != 0) {
-                stop(paste0("Missing template field: ", missing_names, "\n"))
-        }
-        
-        # make the default column a logical value
-        definition$default <- as.logical(definition$default)
-        
-        # Make sure there are no duplicate template_name
-        duplicates <- definition$template_name[duplicated(definition$template_name)]
-        if (length(duplicates) > 0) {
-                stop(paste0("Duplicate template name found in template_name field: ", duplicates, "\n"))
-        }
-        
-        # Create a user friendly display name for the templates, numbering each one
-        # and marking the default with a (*)
-        definition$display_name <- paste0(row.names(definition), ".",
-                                          ifelse(definition$default, "(*) ", "    "),
-                                          definition$template_name)
-        
-        definition
 }
 
 
-
-# Check if the root template file exists
+# Check if the root template file exists, and if it doesn't, create a blank one
 .require.root.template <- function() {
         root_template <- .root.template.file() 
         if(!file.exists(root_template)) { 
                 blank <- data.frame(X="")
                 blank <- setNames(blank, .no.templates)
-                write.dcf(blank, root_template)
+                .save.root.template(blank)
         }
 }
 
@@ -328,10 +306,42 @@
         if (!.templates.defined(definition)) 
                 return(NULL)
         
-        definition <- .validate.template.definition(definition)
-        
         definition
 }
+
+# Check the root template definition has the right format and
+# split the content_location field into constituent parts.
+# input is a data frame raw from the root template file
+# output is the expanded definition data frame
+.expand.root.template <- function(definition) {
+        
+        # return if no templates
+        if(!.templates.defined(definition))  
+                return (NULL)
+        
+        # check that the general rules for a template are in place
+        definition <- .validate.template.definition(definition)
+        
+        # make the default column a logical value
+        definition$default <- as.logical(definition$default)
+        
+        # Make sure there are no duplicate template_name
+        duplicates <- definition$template_name[duplicated(definition$template_name)]
+        if (length(duplicates) > 0) {
+                stop(paste0("Duplicate template name found in template_name field: ", duplicates, "\n"))
+        }
+        
+        # Create a user friendly display name for the templates, numbering each one
+        # and marking the default with a (*)
+        definition$display_name <- paste0(row.names(definition), ".",
+                                          ifelse(definition$default, "(*) ", "    "),
+                                          definition$template_name)
+        
+        # This is a bigger definition frame than was supplied as input
+        definition
+}
+
+
 
 # Determine whether custom templates are present
 .templates.defined <- function(definition){
@@ -352,6 +362,14 @@
 # stop if any validation breaks
 .validate.template.definition <- function(definition) {
         
+        # Make sure only root items are included in the definition
+        definition <- definition[definition$template_type == "root",]
+        
+        # Mandatory fields for root templates should be present
+        missing_names <- setdiff(.root.template.field.names, names(definition))
+        if (length(missing_names) != 0) {
+                stop(paste0("Missing template field: ", missing_names, "\n"))
+        }
         
         # Mandatory fields should be present
         missing_names <- setdiff(.template.field.names, names(definition))
