@@ -81,6 +81,7 @@ Collate:
     'help.R'
     'load.project.R'
     'migrate.project.R'
+    'onLoad.R'
     'project.config.R'
     'reload.project.R'
     'run.project.R'
