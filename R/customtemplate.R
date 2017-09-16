@@ -84,7 +84,7 @@
 }
 
 .root.template.file <- function () {
-        root.template.name=getOption("PT_ROOT_TEMPLATE_FILE")
+        root.template.name<-getOption("PT_ROOT_TEMPLATE_FILE")
         if(is.null(root.template.name))
                 root.template.name="ProjectTemplateRootConfig.dcf"
         template_file <- file.path(.root.template.dir(), root.template.name)
@@ -194,9 +194,22 @@
         
 }
 
-.set.root.template.default <- function(template.name) {
-        t<- .get.template(template.name)
-        #t$
+.set.root.template.default <- function(template.name=NULL, nodefault=FALSE) {
+        # read entire definition file first and set defaults to FALSE
+        definition <- .read.root.template()
+        
+        # make sure template.name exists
+        template.name <- .get.template(template.name)
+        if(!is.null(template.name)|nodefault) {
+                definition$default<-FALSE
+                
+                # definitely exists in the current definition file
+                # so set it to the default and overwrite
+                if(!nodefault)
+                        definition[definition$template_name==template.name$template_name,]$default <- TRUE
+                .save.root.template(definition)
+        } 
+                
 }
 
 # Internal functions to manipulate the root template file
@@ -225,14 +238,23 @@
 
 
 # Save a template definition into the root template file
+# This takes as input the expanded definition file and saves only relevant 
+# fields into the root template file
 .save.root.template <- function(definition) {
         
-        # return if no templates
-        if(!.templates.defined(definition))  
-                return (NULL)
+        if(is.null(definition)) {
+                # Then we create a blank root template file
+                definition <- data.frame(X="")
+                definition <- setNames(blank, .no.templates)
+        } else {
+                # otherwise validate and keep relevant columns
+                definition <- .validate.template.definition(definition)
+                definition <- definition[, c(.template.field.names, 
+                                             .root.template.field.names)]
+                
+        }
         
-        # Make sure only root items are included in the definition
-        definition <- definition[definition$template_type == "root",]
+        write.dcf(definition, .root.template.file())
 }
 
 
@@ -240,9 +262,7 @@
 .require.root.template <- function() {
         root_template <- .root.template.file() 
         if(!file.exists(root_template)) { 
-                blank <- data.frame(X="")
-                blank <- setNames(blank, .no.templates)
-                .save.root.template(blank)
+                .save.root.template(NULL)
         }
 }
 
@@ -398,6 +418,11 @@
 # take a template definition dataframe, parse the content_location field into
 # the valid components and return the definition frame with the new columns
 .parse.content.location <- function(definition) {
+        
+        # make sure the parsed definitions dont exist
+        definition$location_type<-NULL
+        definition$file_location<-NULL
+        definition$github_repo<-NULL
         
         # Parse the content_location field to extract the embedded information
         content_location <- strsplit(definition$content_location, ":")

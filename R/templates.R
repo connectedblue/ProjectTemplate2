@@ -88,6 +88,9 @@ templates <- function(command = "show", template.name = NULL, location = NULL)
                  if (is.null(template.name))
                          message("Please supply a template to make default")
                  .set.root.template.default(template.name)
+         },
+         nodefault={
+                 .set.root.template.default(nodefault=TRUE)
          }
          
          

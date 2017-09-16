@@ -152,3 +152,52 @@ test_that('adding templates hosted on github works correctly', {
         
         tidy_up()
 })
+
+test_that('default templates can be set and unset', {
+        
+        # Set environment variable to the root template location
+        options(PT_ROOT_TEMPLATE_DIR=root_template_dir)
+        options(PT_ROOT_TEMPLATE_FILE="ProjectTemplateRootConfig.dcf")
+        
+        on.exit(options(PT_ROOT_TEMPLATE_DIR=NULL))
+        
+        this_dir <- getwd()
+        
+        test_project <- tempfile('test_project')
+        
+        # Set the default to template 2 and create project without specifying template
+        expect_message(templates("default", 2), "2.(*)")
+        suppressMessages(create.project(test_project, minimal = FALSE))
+        
+        oldwd <- setwd(test_project)
+        on.exit(setwd(oldwd), add = TRUE)
+        on.exit(unlink(test_project, recursive = TRUE), add = TRUE)
+        
+        
+        # template 2 has a custom config variable called template which is set to 2
+        # and a file called readme.md.  Check default template was applied
+        suppressMessages(load.project())
+        expect_true(file.exists("readme.md"))
+        expect_equal(config$template, 21)
+        
+        test_project2 <- tempfile('test_project')
+        
+        # Set the no default and create project without specifying template
+        expect_message(templates("nodefault"), "2.   ")
+        suppressMessages(create.project(test_project2, minimal = FALSE))
+        
+        oldwd2 <- setwd(test_project2)
+        on.exit(setwd(oldwd2), add = TRUE)
+        on.exit(unlink(test_project2, recursive = TRUE), add = TRUE)
+        
+        # template 2 has a custom config variable called template which is set to 2
+        # and a file called readme.md.  Check this template was not applied
+        suppressMessages(load.project())
+        expect_null(config$template)
+        expect_null(config$template)
+        
+        setwd(this_dir)
+        tidy_up()
+})        
+
+
