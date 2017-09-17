@@ -245,7 +245,7 @@
         if(is.null(definition)) {
                 # Then we create a blank root template file
                 definition <- data.frame(X="")
-                definition <- setNames(blank, .no.templates)
+                names(definition) <- .no.templates
         } else {
                 # otherwise validate and keep relevant columns
                 definition <- .validate.template.definition(definition)
